@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http; // If you're going to make HTTP requests
-import 'dart:convert'; // Necessary for converting the data to JSON format
+import 'package:flutter_application_1/homepage.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -14,8 +13,22 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   Future<void> loginUser() async {
-    // Implement login logic here
-    // You will use http.post to send username and password to your Node.js backend
+    // Simulate a login process
+    // In a real app, you would make an HTTP request here
+    final username = _usernameController.text;
+    final password = _passwordController.text;
+
+    // Mock login success condition
+    if (username.isNotEmpty && password.isNotEmpty) {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => HomePage()),
+      );
+    } else {
+      // If the login fails, show an error message
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Invalid username or password')),
+      );
+    }
   }
 
   @override

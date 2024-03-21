@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'registration.dart'; // Assuming you name your registration screen file this
-
+import 'package:flutter_application_1/login.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -27,7 +26,7 @@ class MyApp extends StatelessWidget {
           onSurface: Colors.black, // Text color on top of surface colors
         ),
       ),
-      home: const RegistrationScreen(), // Your registration screen is now here
+      home: const LoginScreen(), // Your registration screen is now here
     );
   }
 }
