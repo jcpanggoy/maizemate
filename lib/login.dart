@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/homepage.dart';
+import 'package:flutter_application_1/registration.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -65,10 +66,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 backgroundColor: const Color(0xFF106B13),
                 foregroundColor: Colors.white,
               ),
-              onPressed: () {
-                loginUser();
-              },
+              onPressed: loginUser,
               child: const Text('Login'),
+            ),
+            TextButton(
+              // Style for your register button
+              style: TextButton.styleFrom(
+                foregroundColor: const Color(0xFF106B13), // Text color
+              ),
+              onPressed: () {
+                // Navigate to the RegistrationScreen when the button is pressed
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const RegistrationScreen()),
+                );
+              },
+              child: const Text('Create a new account'),
             ),
           ],
         ),

@@ -22,12 +22,12 @@ Future<void> registerUser() async {
       url,
       headers: {"Content-Type": "application/json"},
       body: json.encode({
-  'name': _nameController.text,
-  'phoneNumber': _phoneNumberController.text, // Corrected key to 'phoneNumber'
-  'username': _usernameController.text,
-  'password': _passwordController.text,
-      }),
-    );
+      'name': _nameController.text,
+      'phoneNumber': _phoneNumberController.text, // Corrected key to 'phoneNumber'
+      'username': _usernameController.text,
+      'password': _passwordController.text,
+          }),
+        );
 
     if (response.statusCode == 201) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
